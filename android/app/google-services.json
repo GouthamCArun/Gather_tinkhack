@@ -1,0 +1,91 @@
+{
+  "project_info": {
+    "project_number": "1070198266308",
+    "firebase_url": "https://studiesy-default-rtdb.firebaseio.com",
+    "project_id": "studiesy",
+    "storage_bucket": "studiesy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1070198266308:android:95ecea117bf27e04256c91",
+        "android_client_info": {
+          "package_name": "com.example.gather"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1070198266308-lscd85q92gdtbf3htt46f93n3vvfbck8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnMCjizFK9rzNBwxa8Lrk7SO7g7poopoE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1070198266308-lscd85q92gdtbf3htt46f93n3vvfbck8.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1070198266308-rj0iifnsmrcumos9jak3ompchbh7ulek.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.studiesy"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1070198266308:android:e4dd4f4a6ed8b33e256c91",
+        "android_client_info": {
+          "package_name": "com.example.studiesy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1070198266308-51bnet52rvuo5hmd80lpis694m5sb2gu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.studiesy",
+            "certificate_hash": "5915c7759811fe77e414c8769271bc41271e92a5"
+          }
+        },
+        {
+          "client_id": "1070198266308-lscd85q92gdtbf3htt46f93n3vvfbck8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnMCjizFK9rzNBwxa8Lrk7SO7g7poopoE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1070198266308-lscd85q92gdtbf3htt46f93n3vvfbck8.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1070198266308-rj0iifnsmrcumos9jak3ompchbh7ulek.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.studiesy"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
