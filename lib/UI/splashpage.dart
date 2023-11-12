@@ -1,3 +1,5 @@
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:gather/UI/dashboard.dart';
 import 'package:gather/UI/emailpage.dart';
@@ -9,9 +11,42 @@ class SplashPage extends StatefulWidget {
   State<SplashPage> createState() => _SplashPageState();
 }
 
+Future<Album> createAlbum(String det) async {
+  final result = await http.post(
+    Uri.parse('https://web-production-9823.up.railway.app/details'),
+    headers: <String, String>{
+      'Content-Type': 'application/json; charset=UTF-8',
+    },
+    body: jsonEncode(<String, String>{"detail": det}),
+  );
+
+  if (result.statusCode == 200) {
+    return Album.fromJson(jsonDecode(result.body));
+  } else {
+    throw Exception('Failed to create album');
+  }
+}
+
+class Album {
+  final String answer;
+
+  const Album({required this.answer});
+
+  factory Album.fromJson(Map<String, dynamic> json) {
+    return Album(
+      answer: json['result'],
+    );
+  }
+}
+
 class _SplashPageState extends State<SplashPage> {
-  TextEditingController inputController = TextEditingController();
+  late final TextEditingController inputController = TextEditingController();
   @override
+  void dispose() {
+    inputController.dispose();
+    super.dispose();
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xff201f47),
@@ -69,7 +104,11 @@ class _SplashPageState extends State<SplashPage> {
                             ),
                           ),
                           ElevatedButton(
-                            onPressed: () {
+                            onPressed: () async {
+                              final inputController1 = inputController.text;
+                              final result =
+                                  await createAlbum(inputController1);
+                              print('API Response: ${result.answer}');
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
