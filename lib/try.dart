@@ -7,8 +7,8 @@ import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
-
+  const HomeScreen({Key? key, this.isSend}) : super(key: key);
+  final isSend;
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
@@ -112,6 +112,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Center(
       child: ElevatedButton.icon(
+          style: ButtonStyle(elevation: MaterialStatePropertyAll(0)),
           onPressed: _fetchAndPrintMostRecentFile,
           icon: const Icon(Icons.send),
           label: const Text("Analyse the Call")),

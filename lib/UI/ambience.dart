@@ -1,6 +1,8 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-
+import 'package:http/http.dart' as http;
 import '../try.dart';
 
 class AmbiencePage extends StatefulWidget {
@@ -52,6 +54,32 @@ class _AmbiencePageState extends State<AmbiencePage> {
                 tileColor: Colors.white54,
               ),
             ),
+            Visibility(
+              visible: isSend,
+              child: ElevatedButton(
+                  onPressed: () async {
+                    try {
+                      final result = await http.post(
+                        Uri.parse(
+                            'https://web-production-9a03d.up.railway.app/whats'),
+                        headers: <String, String>{
+                          'Content-Type': 'application/json; charset=UTF-8',
+                        },
+                        body: jsonEncode(<String, String>{"num": "9400244505"}),
+                      );
+
+                      if (result.statusCode == 200) {
+                        print("response vannu");
+                        return jsonDecode(result.body);
+                      } else {
+                        throw Exception(result.statusCode);
+                      }
+                    } catch (e) {
+                      print(e);
+                    }
+                  },
+                  child: const Text("Accept")),
+            ),
             Padding(
               padding: const EdgeInsets.all(20),
               child: ListTile(
@@ -98,7 +126,19 @@ class _AmbiencePageState extends State<AmbiencePage> {
                 tileColor: Colors.white54,
               ),
             ),
-            const HomeScreen()
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 90),
+              child: ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    isSend = true;
+                  });
+                },
+                child: HomeScreen(
+                  isSend: isSend,
+                ),
+              ),
+            ),
           ],
         ),
       ),

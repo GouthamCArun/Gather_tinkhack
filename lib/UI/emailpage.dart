@@ -9,6 +9,10 @@ class EmailPage extends StatefulWidget {
 }
 
 class _EmailPageState extends State<EmailPage> {
+  TextEditingController controller1 = TextEditingController();
+  TextEditingController controller2 = TextEditingController();
+  TextEditingController controller3 = TextEditingController();
+  TextEditingController controller4 = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -39,6 +43,7 @@ class _EmailPageState extends State<EmailPage> {
                       color: Colors.white38,
                       borderRadius: BorderRadius.circular(10)),
                   child: TextFormField(
+                    controller: controller1,
                     decoration: const InputDecoration(
                         hintText: "Email Address",
                         hintStyle: TextStyle(color: Colors.white),
@@ -55,6 +60,7 @@ class _EmailPageState extends State<EmailPage> {
                       color: Colors.white38,
                       borderRadius: BorderRadius.circular(10)),
                   child: TextFormField(
+                    controller: controller2,
                     decoration: const InputDecoration(
                         hintText: "Email Address",
                         hintStyle: TextStyle(color: Colors.white),
@@ -71,6 +77,7 @@ class _EmailPageState extends State<EmailPage> {
                       color: Colors.white38,
                       borderRadius: BorderRadius.circular(10)),
                   child: TextFormField(
+                    controller: controller3,
                     decoration: const InputDecoration(
                         hintText: "Email Address",
                         hintStyle: TextStyle(color: Colors.white),
@@ -87,6 +94,7 @@ class _EmailPageState extends State<EmailPage> {
                       color: Colors.white38,
                       borderRadius: BorderRadius.circular(10)),
                   child: TextFormField(
+                    controller: controller4,
                     style: const TextStyle(color: Colors.white),
                     decoration: const InputDecoration(
                         focusColor: Colors.white,

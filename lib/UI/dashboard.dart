@@ -250,15 +250,20 @@ class _DashBoardState extends State<DashBoard> {
               ),
               Padding(
                 padding: const EdgeInsets.all(15),
-                child: Container(
-                  padding: const EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: const Color.fromARGB(59, 24, 0, 65)),
-                  child: const Text(
-                    "TinkHack",
-                    style: TextStyle(color: Colors.white, fontSize: 17),
-                  ),
+                child: Column(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: const Color.fromARGB(59, 24, 0, 65)),
+                      child: const Text(
+                        "TinkHack",
+                        style: TextStyle(color: Colors.white, fontSize: 17),
+                      ),
+                    ),
+                    Text("")
+                  ],
                 ),
               ),
             ],
