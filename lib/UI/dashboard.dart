@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:gather/UI/ambience.dart';
+import 'package:gather/UI/invitation.dart';
 
 class DashBoard extends StatefulWidget {
   const DashBoard({super.key});
@@ -44,153 +46,198 @@ class _DashBoardState extends State<DashBoard> {
                         children: [
                           Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              height: 250,
-                              width: 200,
-                              decoration: BoxDecoration(
-                                  color: Colors.white12,
-                                  borderRadius: BorderRadius.circular(15)),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    const Text(
-                                      "Invitations",
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 24),
-                                    ),
-                                    const Text(
-                                      "Finished",
-                                      style: TextStyle(color: Colors.white60),
-                                    ),
-                                    const Text(
-                                      "via Mail",
-                                      style: TextStyle(color: Colors.white54),
-                                    ),
-                                    const SizedBox(
-                                      height: 35,
-                                    ),
-                                    Align(
-                                      alignment: Alignment.bottomRight,
-                                      child:
-                                          Image.asset("assets/invitation.png"),
-                                    )
-                                  ],
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (BuildContext) =>
+                                        const InvitationPage(),
+                                  ),
+                                );
+                              },
+                              child: Container(
+                                height: 250,
+                                width: 200,
+                                decoration: BoxDecoration(
+                                    color: Colors.white12,
+                                    borderRadius: BorderRadius.circular(15)),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      const Text(
+                                        "Invitations",
+                                        style: TextStyle(
+                                            color: Colors.white, fontSize: 24),
+                                      ),
+                                      const Text(
+                                        "Finished",
+                                        style: TextStyle(color: Colors.white60),
+                                      ),
+                                      const Text(
+                                        "via Mail",
+                                        style: TextStyle(color: Colors.white54),
+                                      ),
+                                      const SizedBox(
+                                        height: 35,
+                                      ),
+                                      Align(
+                                        alignment: Alignment.bottomRight,
+                                        child: Image.asset(
+                                            "assets/invitation.png"),
+                                      )
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
                           ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              height: 250,
-                              width: 200,
-                              decoration: BoxDecoration(
-                                  color: Colors.white12,
-                                  borderRadius: BorderRadius.circular(15)),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    const Text(
-                                      "Photography",
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 24),
-                                    ),
-                                    const Text(
-                                      "On going",
-                                      style: TextStyle(color: Colors.white60),
-                                    ),
-                                    const Text(
-                                      "via Call",
-                                      style: TextStyle(color: Colors.white54),
-                                    ),
-                                    const SizedBox(
-                                      height: 35,
-                                    ),
-                                    Align(
-                                      alignment: Alignment.bottomRight,
-                                      child: Image.asset("assets/photo.png"),
-                                    )
-                                  ],
+                            child: GestureDetector(
+                              onTap: () {
+                                  Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (BuildContext) =>
+                                        const InvitationPage(),
+                                  ),
+                                );
+                              },
+                              child: Container(
+                                height: 250,
+                                width: 200,
+                                decoration: BoxDecoration(
+                                    color: Colors.white12,
+                                    borderRadius: BorderRadius.circular(15)),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      const Text(
+                                        "Photography",
+                                        style: TextStyle(
+                                            color: Colors.white, fontSize: 24),
+                                      ),
+                                      const Text(
+                                        "On going",
+                                        style: TextStyle(color: Colors.white60),
+                                      ),
+                                      const Text(
+                                        "via Call",
+                                        style: TextStyle(color: Colors.white54),
+                                      ),
+                                      const SizedBox(
+                                        height: 35,
+                                      ),
+                                      Align(
+                                        alignment: Alignment.bottomRight,
+                                        child: Image.asset("assets/photo.png"),
+                                      )
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
                           ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              height: 250,
-                              width: 200,
-                              decoration: BoxDecoration(
-                                  color: Colors.white12,
-                                  borderRadius: BorderRadius.circular(15)),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    const Text(
-                                      "Food",
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 24),
-                                    ),
-                                    const Text(
-                                      "Pending",
-                                      style: TextStyle(color: Colors.white60),
-                                    ),
-                                    const Text(
-                                      "via Call",
-                                      style: TextStyle(color: Colors.white54),
-                                    ),
-                                    const SizedBox(
-                                      height: 35,
-                                    ),
-                                    Align(
-                                      alignment: Alignment.bottomRight,
-                                      child: Image.asset("assets/food.png"),
-                                    )
-                                  ],
+                            child: GestureDetector(
+                              onTap: () {
+                                  Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (BuildContext) =>
+                                        const InvitationPage(),
+                                  ),
+                                );
+                              },
+                              child: Container(
+                                height: 250,
+                                width: 200,
+                                decoration: BoxDecoration(
+                                    color: Colors.white12,
+                                    borderRadius: BorderRadius.circular(15)),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      const Text(
+                                        "Food",
+                                        style: TextStyle(
+                                            color: Colors.white, fontSize: 24),
+                                      ),
+                                      const Text(
+                                        "Pending",
+                                        style: TextStyle(color: Colors.white60),
+                                      ),
+                                      const Text(
+                                        "via Call",
+                                        style: TextStyle(color: Colors.white54),
+                                      ),
+                                      const SizedBox(
+                                        height: 35,
+                                      ),
+                                      Align(
+                                        alignment: Alignment.bottomRight,
+                                        child: Image.asset("assets/food.png"),
+                                      )
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
                           ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              height: 250,
-                              width: 200,
-                              decoration: BoxDecoration(
-                                  color: Colors.white12,
-                                  borderRadius: BorderRadius.circular(15)),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    const Text(
-                                      "Ambience",
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 24),
-                                    ),
-                                    const Text(
-                                      "Pending",
-                                      style: TextStyle(color: Colors.white60),
-                                    ),
-                                    const Text(
-                                      "via Call",
-                                      style: TextStyle(color: Colors.white54),
-                                    ),
-                                    const SizedBox(
-                                      height: 35,
-                                    ),
-                                    Align(
-                                      alignment: Alignment.bottomRight,
-                                      child: Image.asset("assets/ambience.png"),
-                                    )
-                                  ],
+                            child: GestureDetector(
+                              onTap: () {
+                                  Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (BuildContext) =>
+                                        const AmbiencePage(),
+                                  ),
+                                );
+                              },
+                              child: Container(
+                                height: 250,
+                                width: 200,
+                                decoration: BoxDecoration(
+                                    color: Colors.white12,
+                                    borderRadius: BorderRadius.circular(15)),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      const Text(
+                                        "Ambience",
+                                        style: TextStyle(
+                                            color: Colors.white, fontSize: 24),
+                                      ),
+                                      const Text(
+                                        "Pending",
+                                        style: TextStyle(color: Colors.white60),
+                                      ),
+                                      const Text(
+                                        "via Call",
+                                        style: TextStyle(color: Colors.white54),
+                                      ),
+                                      const SizedBox(
+                                        height: 35,
+                                      ),
+                                      Align(
+                                        alignment: Alignment.bottomRight,
+                                        child: Image.asset("assets/ambience.png"),
+                                      )
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
