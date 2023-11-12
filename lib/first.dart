@@ -1,10 +1,8 @@
-import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'second.dart';
-import 'trying.dart';
 
 class FirstPage extends StatefulWidget {
   const FirstPage({super.key});
@@ -19,6 +17,7 @@ class _FirstPageState extends State<FirstPage> {
   late final TextEditingController _name;
   late final TextEditingController _pos;
   late final TextEditingController _compname;
+  @override
   void initState() {
     _abt = TextEditingController();
     _mail = TextEditingController();
@@ -183,27 +182,17 @@ class _FirstPageState extends State<FirstPage> {
                         final compname = _compname.text;
                         print("presed");
                         try {
-                          print('------------------------' +
-                              abt.toString() +
-                              '---------');
-                          print('------------------------' +
-                              mail.toString() +
-                              '---------');
-                          print('------------------------' +
-                              name.toString() +
-                              '---------');
-                          print('------------------------' +
-                              pos.toString() +
-                              '---------');
+                          print('------------------------$abt---------');
+                          print('------------------------$mail---------');
+                          print('------------------------$name---------');
+                          print('------------------------$pos---------');
                           print(//here we are printing the values
-                              '------------------------' +
-                                  compname.toString() +
-                                  '---------');
+                              '------------------------$compname---------');
 
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Questions()),
+                                builder: (context) => const Questions()),
                           );
 
                           //                   super.key,

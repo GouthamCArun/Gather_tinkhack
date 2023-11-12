@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 class ThirdPage extends StatefulWidget {
-  ThirdPage({
+  const ThirdPage({
     Key? key,
     required this.cmpname,
     required this.pname,
@@ -23,7 +23,6 @@ class ThirdPage extends StatefulWidget {
 
 Future<Album> createAlbum(String cmpname, String pname, String ppos, String abt,
     String email, String rname) async {
-  ;
   final result = await http.post(
     Uri.parse('https://web-production-77cb.up.railway.app/mail'),
     headers: <String, String>{

@@ -7,7 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 
 class Questions extends StatefulWidget {
-  Questions({super.key});
+  const Questions({super.key});
 
   @override
   State<Questions> createState() => _QuestionsState();
@@ -54,8 +54,8 @@ class _QuestionsState extends State<Questions> {
                     Text(
                       'Do you want to add an image?',
                       style: GoogleFonts.getFont('Poppins',
-                          textStyle: TextStyle(
-                            color: const Color.fromARGB(255, 0, 0, 0),
+                          textStyle: const TextStyle(
+                            color: Color.fromARGB(255, 0, 0, 0),
                             fontSize: 15,
                             fontWeight: FontWeight.bold,
                           )),
@@ -71,7 +71,7 @@ class _QuestionsState extends State<Questions> {
                             image: DecorationImage(
                               image: _imagePresent
                                   ? FileImage(_image!)
-                                  : AssetImage("assets/im.png")
+                                  : const AssetImage("assets/im.png")
                                       as ImageProvider,
                               fit: BoxFit.cover,
                             ),
@@ -97,7 +97,7 @@ class _QuestionsState extends State<Questions> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     SizedBox(
@@ -135,7 +135,7 @@ class _QuestionsState extends State<Questions> {
                                 _image!, 'image'))!;
                           }
 
-                          try {} on Exception catch (e) {
+                          try {} on Exception {
                             setState(() {
                               _uploading = true;
                             });
@@ -158,7 +158,7 @@ class _QuestionsState extends State<Questions> {
             ),
           ),
           if (_uploading)
-            Center(
+            const Center(
               child: CircularProgressIndicator(),
             ),
         ],
