@@ -48,7 +48,7 @@ class _InvitationPageState extends State<InvitationPage> {
               ),
             ),
             Container(
-              height: 300,
+              height: 350,
               width: 300,
               child: ListView.builder(
                   itemCount: email.length,

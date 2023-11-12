@@ -74,7 +74,8 @@ class _SplashPageState extends State<SplashPage> {
                                         const DashBoard()));
                           },
                           mini: true,
-                          backgroundColor: Color.fromARGB(53, 93, 72, 184),
+                          backgroundColor:
+                              const Color.fromARGB(53, 93, 72, 184),
                           child: const Icon(Icons.skip_next_rounded)),
                     ),
                   ),
@@ -96,9 +97,10 @@ class _SplashPageState extends State<SplashPage> {
                                 borderRadius: BorderRadius.circular(10)),
                             child: TextFormField(
                               controller: inputController,
+                              style: const TextStyle(color: Colors.white),
                               decoration: const InputDecoration(
                                   hintText: "Tell about Your amazing event..",
-                                  hintStyle: TextStyle(color: Colors.white),
+                                  hintStyle: TextStyle(color: Colors.white54),
                                   border: InputBorder.none),
                               autocorrect: true,
                             ),
@@ -106,21 +108,37 @@ class _SplashPageState extends State<SplashPage> {
                           ElevatedButton(
                             onPressed: () async {
                               final inputController1 = inputController.text;
-                              final result =
-                                  await createAlbum(inputController1);
-                              print('API Response: ${result.answer}');
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const EmailPage(),
-                                ),
+                              final result = await http.post(
+                                Uri.parse(
+                                    'https://web-production-9823.up.railway.app/details'),
+                                headers: <String, String>{
+                                  'Content-Type':
+                                      'application/json; charset=UTF-8',
+                                },
+                                body: jsonEncode(<String, String>{
+                                  "detail": inputController1
+                                }),
                               );
+
+                              if (result.statusCode == 200) {
+                                print('API Response: ${result.body}');
+                                // ignore: use_build_context_synchronously
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const EmailPage(),
+                                  ),
+                                );
+                                return jsonDecode(result.body);
+                              } else {
+                                throw Exception('Failed to create album');
+                              }
                             },
                             style: ElevatedButton.styleFrom(
                               primary: const Color.fromARGB(53, 93, 72,
                                   184), // Set the background color here
                             ),
-                            child: Text("Next"),
+                            child: const Text("Next"),
                           ),
                         ],
                       ),

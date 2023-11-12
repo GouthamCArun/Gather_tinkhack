@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:gather/UI/dashboard.dart';
 
@@ -9,6 +10,7 @@ class EmailPage extends StatefulWidget {
 }
 
 class _EmailPageState extends State<EmailPage> {
+  FirebaseFirestore db = FirebaseFirestore.instance;
   TextEditingController controller1 = TextEditingController();
   TextEditingController controller2 = TextEditingController();
   TextEditingController controller3 = TextEditingController();
@@ -44,6 +46,7 @@ class _EmailPageState extends State<EmailPage> {
                       borderRadius: BorderRadius.circular(10)),
                   child: TextFormField(
                     controller: controller1,
+                    style: const TextStyle(color: Colors.white),
                     decoration: const InputDecoration(
                         hintText: "Email Address",
                         hintStyle: TextStyle(color: Colors.white),
@@ -61,6 +64,7 @@ class _EmailPageState extends State<EmailPage> {
                       borderRadius: BorderRadius.circular(10)),
                   child: TextFormField(
                     controller: controller2,
+                    style: const TextStyle(color: Colors.white),
                     decoration: const InputDecoration(
                         hintText: "Email Address",
                         hintStyle: TextStyle(color: Colors.white),
@@ -77,6 +81,7 @@ class _EmailPageState extends State<EmailPage> {
                       color: Colors.white38,
                       borderRadius: BorderRadius.circular(10)),
                   child: TextFormField(
+                    style: const TextStyle(color: Colors.white),
                     controller: controller3,
                     decoration: const InputDecoration(
                         hintText: "Email Address",
@@ -109,6 +114,15 @@ class _EmailPageState extends State<EmailPage> {
                       backgroundColor: MaterialStatePropertyAll(
                           Color.fromARGB(255, 248, 218, 107))),
                   onPressed: () {
+                    final docUser = db.collection('details').doc('person');
+                    docUser.update({
+                      'email': [
+                        controller1.text,
+                        controller2.text,
+                        controller3.text,
+                        controller4.text
+                      ],
+                    });
                     Navigator.push(
                       context,
                       MaterialPageRoute(
