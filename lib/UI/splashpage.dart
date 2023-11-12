@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gather/UI/dashboard.dart';
 import 'package:gather/UI/emailpage.dart';
 
 class SplashPage extends StatefulWidget {
@@ -35,7 +36,7 @@ class _SplashPageState extends State<SplashPage> {
                                 context,
                                 MaterialPageRoute(
                                     builder: (BuildContext) =>
-                                        const EmailPage()));
+                                        const DashBoard()));
                           },
                           mini: true,
                           backgroundColor: Color.fromARGB(53, 93, 72, 184),
@@ -51,19 +52,38 @@ class _SplashPageState extends State<SplashPage> {
                       elevation: 20,
                       borderRadius: BorderRadius.circular(10),
                       color: const Color.fromARGB(53, 93, 72, 184),
-                      child: Container(
-                        padding: const EdgeInsets.only(left: 10),
-                        decoration: BoxDecoration(
-                            color: const Color.fromARGB(53, 93, 72, 184),
-                            borderRadius: BorderRadius.circular(10)),
-                        child: TextFormField(
-                          controller: inputController,
-                          decoration: const InputDecoration(
-                              hintText: "Tell about Your amazing event..",
-                              hintStyle: TextStyle(color: Colors.white),
-                              border: InputBorder.none),
-                          autocorrect: true,
-                        ),
+                      child: Column(
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.only(left: 10),
+                            decoration: BoxDecoration(
+                                color: const Color.fromARGB(53, 93, 72, 184),
+                                borderRadius: BorderRadius.circular(10)),
+                            child: TextFormField(
+                              controller: inputController,
+                              decoration: const InputDecoration(
+                                  hintText: "Tell about Your amazing event..",
+                                  hintStyle: TextStyle(color: Colors.white),
+                                  border: InputBorder.none),
+                              autocorrect: true,
+                            ),
+                          ),
+                          ElevatedButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const EmailPage(),
+                                ),
+                              );
+                            },
+                            style: ElevatedButton.styleFrom(
+                              primary: const Color.fromARGB(53, 93, 72,
+                                  184), // Set the background color here
+                            ),
+                            child: Text("Next"),
+                          ),
+                        ],
                       ),
                     ),
                   ),
