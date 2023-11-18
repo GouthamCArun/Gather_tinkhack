@@ -47,7 +47,7 @@ class _InvitationPageState extends State<InvitationPage> {
                     fontWeight: FontWeight.w600),
               ),
             ),
-            Container(
+            SizedBox(
               height: 350,
               width: 300,
               child: ListView.builder(
@@ -112,7 +112,8 @@ class _InvitationPageState extends State<InvitationPage> {
           "y_name": snapshotUserInfo.get('name'),
           "y_pos": snapshotUserInfo.get('position'),
           "y_comp": snapshotUserInfo.get('event'),
-          "email_list": "gouthamchennamakkal@gmail.com"
+          "email_list":
+              "${snapshotUserInfo.get('email')[0]},${snapshotUserInfo.get('email')[1]},${snapshotUserInfo.get('email')[2]},${snapshotUserInfo.get('email')[3]}}"
         }),
       );
 

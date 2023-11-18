@@ -26,9 +26,9 @@ class _HomeScreenState extends State<HomeScreen> {
     List<File> files = await getFilesFromDirectory(directoryPath);
 
     // Do something with the list of files, such as printing their paths.
-    files.forEach((file) {
+    for (var file in files) {
       print("File: ${file.path}");
-    });
+    }
 
     if (!directory.existsSync()) {
       throw "Directory not found: $directoryPath";
@@ -41,7 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
     files
         .sort((a, b) => b.statSync().modified.compareTo(a.statSync().modified));
 
-    return files.first as File;
+    return files.first;
   }
 
   Future<List<File>> getFilesFromDirectory(String directoryPath) async {
@@ -112,7 +112,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Center(
       child: ElevatedButton.icon(
-          style: ButtonStyle(elevation: MaterialStatePropertyAll(0)),
+          style: const ButtonStyle(elevation: MaterialStatePropertyAll(0)),
           onPressed: _fetchAndPrintMostRecentFile,
           icon: const Icon(Icons.send),
           label: const Text("Analyse the Call")),

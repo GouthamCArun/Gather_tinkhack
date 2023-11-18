@@ -47,6 +47,7 @@ class _SplashPageState extends State<SplashPage> {
     super.dispose();
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xff201f47),
@@ -131,11 +132,12 @@ class _SplashPageState extends State<SplashPage> {
                                 );
                                 return jsonDecode(result.body);
                               } else {
-                                throw Exception('Failed to create album');
+                                throw Exception(
+                                    'Failed to create album ,${result.statusCode}');
                               }
                             },
                             style: ElevatedButton.styleFrom(
-                              primary: const Color.fromARGB(53, 93, 72,
+                              backgroundColor: const Color.fromARGB(53, 93, 72,
                                   184), // Set the background color here
                             ),
                             child: const Text("Next"),
@@ -145,7 +147,7 @@ class _SplashPageState extends State<SplashPage> {
                     ),
                   ),
                 ],
-              )
+              ),
             ],
           ),
         ),

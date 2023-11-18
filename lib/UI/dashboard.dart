@@ -262,7 +262,7 @@ class _DashBoardState extends State<DashBoard> {
                         style: TextStyle(color: Colors.white, fontSize: 17),
                       ),
                     ),
-                    Text("")
+                    const Text("")
                   ],
                 ),
               ),
