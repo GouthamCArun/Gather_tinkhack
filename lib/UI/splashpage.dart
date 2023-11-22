@@ -140,7 +140,7 @@ class _SplashPageState extends State<SplashPage> {
                               backgroundColor: const Color.fromARGB(53, 93, 72,
                                   184), // Set the background color here
                             ),
-                            child: const Text("Let's Move"),
+                            child: const Text("Next"),
                           ),
                         ],
                       ),
